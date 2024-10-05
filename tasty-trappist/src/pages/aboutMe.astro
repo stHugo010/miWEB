@@ -2,17 +2,26 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Boton from '../components/Boton.astro';
-import Intro from '../components/Intro.astro';
 ---
 
 <Layout title="@hugost010">
 	<main>
-		<Intro
-			title='Hugo Sánchez Torres'
-		/>
-		<p class="subtitle">
-			Para más información pulse <a href="./aboutMe" class="link">aquí</a>.
-		</p>
+		<h1>Hugo Sánchez Torres</h1>
+		<ul>
+			<Boton
+				href="https://www.linkedin.com/in/hugo-sanchez-torres-013b97252/"
+				title="Linkedin"
+			/>
+			<Boton
+				href="https://www.instagram.com/hugo_.st/"
+				title="Instagram"
+			/>
+			<Boton
+				href="https://www.linkedin.com/in/hugo-sanchez-torres-013b97252/"
+				title="Codepen"
+			/>
+		</ul>
+			
 	</main>
 </Layout>
 
@@ -72,14 +81,5 @@ import Intro from '../components/Intro.astro';
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
 		padding: 0;
-	}
-	.subtitle{
-		align-items: center;
-		text-align: center;
-        font-size: 1.5rem;
-        font-family: monospace;
-    }
-	a{
-		
 	}
 </style>

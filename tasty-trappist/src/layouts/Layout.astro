@@ -17,6 +17,9 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+	<!--<div class="cabecera">
+			<p>pepe</p>
+		</div> -->
 		<slot />
 	</body>
 </html>
@@ -46,5 +49,13 @@ const { title } = Astro.props;
 			Bitstream Vera Sans Mono,
 			Courier New,
 			monospace;
+	}
+	.cabecera{
+		padding: 0.15rem;
+		background-color: orangered;
+		font-family: monospace;
+		font-size: 1rem;
+		text-align: left;
+		color: white;
 	}
 </style>

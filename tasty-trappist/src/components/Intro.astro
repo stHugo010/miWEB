@@ -1,0 +1,54 @@
+---
+import Index from '../pages/index.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div>
+    <p>
+        <span class="blink">></span>{title}
+    </p>
+</div>
+
+
+
+<style>
+    body{
+        align-items: center;
+        justify-items: left;
+        display: flex;
+        height: 98lvh;
+        width: 98%;
+    }
+	div{
+        padding: 0.01vh;
+        font-size: 4em;
+		font-weight: 700;
+		line-height: 1;
+		text-align: left;
+		margin-bottom: 1em;
+        display: inline-block;
+        white-space: nowrap;;
+    }
+    p{
+        padding: 0.2em;
+    }
+
+    @keyframes parpadeo {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+
+    .blink {
+        animation: parpadeo 1s infinite;
+    }
+    
+</style>
