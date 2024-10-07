@@ -1,0 +1,29 @@
+---
+import About from "./About.astro";
+import Projects from "./Projects.astro";
+import Contact from "../right/Contact.astro";
+---
+
+
+<div class="body">
+    <div class="apartado">  
+        <About
+            title='Sobre mí'
+        />
+    </div>
+    <div class="apartado">
+        <Projects/>
+    </div>    
+</div>
+
+<style>
+    .body{
+        
+    }
+
+    .apartado{
+        margin: 1em;
+        background-color: rgb(255, 89, 0);
+		border-radius: 2em;
+    }
+</style>

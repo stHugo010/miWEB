@@ -1,6 +1,6 @@
 ---
-import Card from './Card.astro';
-import SocialCard from './SocialCard.astro';
+import Card from '../Card.astro';
+import SocialCard from '../SocialCard.astro';
 interface Props {
 	title: string;
 }
@@ -34,14 +34,16 @@ const { title } = Astro.props;
 		width:  8em;
 	}
 	.body{
-        width: 52rem;
-
+        width: 13em;
+		padding: 1em;
+		height: 70vh;
 		margin: 0.2rem;
 		padding: 0.2rem;
 		font-size: 1.2rem;
 		font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	}
 	h2{
+		font-size: 2em;
 		font-family: monospace;
 		padding: 0.2em;
 		margin-bottom: 0.1rem;
@@ -50,12 +52,10 @@ const { title } = Astro.props;
 		font-family: monospace;
 		padding: 0.3rem;
 		list-style-type: square;
-	}
-    ul {
         justify-content: center;
         display: grid;
-        grid-auto-flow: column;
-        gap: 2rem;
+        grid-auto-flow: row;
+        gap: 1rem;
 		padding: 0;
 	}
 </style>

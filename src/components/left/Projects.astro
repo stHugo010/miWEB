@@ -1,0 +1,123 @@
+---
+import Card from '../Card.astro';
+
+interface Props {}
+
+// Array de tarjetas
+const cards = [
+  { title: '...', body: 'proximamente...', href: '' },
+  { title: '...', body: 'proximamente...', href: '' },
+  { title: '...', body: 'proximamente...', href: '' },
+];
+
+---
+
+<!-- <div class="carousel">
+  <button class="nav left" id="prev-btn">
+    ◀
+  </button>
+  {cards.map((card, i) => (
+    <div class="card-container" data-index={i}>
+      <Card {...card} />
+    </div>
+  ))}
+  <button class="nav right" id="next-btn">
+    ▶
+  </button>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let activeIndex = 2; // índice activo inicial
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const cardContainers = document.querySelectorAll('.card-container');
+	const MAX_VISIBILITY = 3;
+
+
+    function updateCarousel() {
+      cardContainers.forEach((card, i) => {
+        if (card instanceof HTMLElement) {
+          const offset = activeIndex - i; // Calcular el offset entre el índice activo y el índice actual
+          const absOffset = Math.abs(offset); // Calcular el offset absoluto
+
+          // Aplica los estilos dinámicos si el elemento está dentro de la visibilidad
+          if (absOffset <= MAX_VISIBILITY) {
+            card.style.transform = `translateX(${offset * 100}%)`; // Mueve las tarjetas horizontalmente
+            // card.style.opacity = 1 - absOffset / MAX_VISIBILITY; // Reduce la opacidad basado en la distancia
+            card.style.display = 'block'; // Mostrar la tarjeta
+          } else {
+            card.style.display = 'none'; // Ocultar las tarjetas que están fuera del rango visible
+          }
+        }
+      });
+    }
+
+    // prevBtn.addEventListener('click', () => {
+    //   if (activeIndex > 0) {
+    //     activeIndex -= 1;
+    //     updateCarousel();
+    //   }
+    // });
+
+    // nextBtn.addEventListener('click', () => {
+    //   if (activeIndex < cardContainers.length - 1) {
+    //     activeIndex += 1;
+    //     updateCarousel();
+    //   }
+    // });
+
+    updateCarousel(); // Llama a la función al cargar para actualizar el carrusel
+  });
+</script> -->
+
+
+
+
+<style>
+	img{
+		width:  8em;
+	}
+	.body{
+		height: 50vh;
+		margin: 0.2rem;
+		padding: 0.2rem;
+		font-size: 1.2rem;
+		font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	}
+	h2{
+		font-size: 2em;
+
+		font-family: monospace;
+		padding: 0.2em;
+		margin-bottom: 0.1rem;
+	}
+	ul{
+		font-family: monospace;
+		padding: 0.3rem;
+		list-style-type: square;
+	}
+	
+	.nav {
+  		color: white;
+  		font-size: 5rem;
+  		position: absolute;
+  		display: flex;
+  		align-items: center;
+  		justify-content: center;
+  		top: 50%;
+  		z-index: 2;
+  		cursor: pointer;
+  		user-select: none;
+  		background: unset;
+  		border: unset;
+  
+  	&.left {
+    	transform: translateX(-100%) translatey(-50%);
+  	}
+  
+  	&.right {
+    	right: 0;
+    	transform: translateX(100%) translatey(-50%);
+  	}
+</style>

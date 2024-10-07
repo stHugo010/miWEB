@@ -3,9 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Boton from '../components/Boton.astro';
 import Intro from '../components/Intro.astro';
-import About from '../components/About.astro';
-import Projects from '../components/Projects.astro';
-import Contact from '../components/Contact.astro';
+import About from '../components/left/About.astro';
+import Projects from '../components/left/Projects.astro';
+import Contact from '../components/right/Contact.astro';
+import Left from '../components/left/Left.astro';
+import Right from '../components/right/Right.astro';
 ---
 
 <Layout title="@hugost010">
@@ -14,18 +16,14 @@ import Contact from '../components/Contact.astro';
 			title='Hugo Sánchez Torres'
 		/>
 		<div class="cuerpo">
-			<hr>
-			<About
-				title='Sobre mí'
-			/>
-			<hr>
-			<Projects
-				title='Proyectos'
-			/>
-			<hr>
-			<Contact
-				title='Contacto y redes'
-			/>
+			<ul>
+				<li>
+					<Left/>
+				</li>
+				<li>
+					<Right/>
+				</li>
+			</ul>
 		</div>
 	</main>
 </Layout>
@@ -36,13 +34,28 @@ import Contact from '../components/Contact.astro';
 		margin: auto;
 		padding: 1rem;
 		max-width: calc(100% - 2rem);
-		color: white;
+		color: rgb(0, 0, 0);
 		font-size: 20px;
 		line-height: 1.6;
 	}
 	.cuerpo{
-		width: 52rem;
+		width: 60%;
 		margin: auto;
+	}
+
+	li{
+		
+	}
+
+	ul{
+		font-family: monospace;
+		padding: 0.3rem;
+		list-style-type: none;
+        justify-content: center;
+        display: grid;
+        grid-auto-flow: column;
+        gap: 1rem;
+		padding: 0;
 	}
 
 	hr{
