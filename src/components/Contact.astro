@@ -1,0 +1,61 @@
+---
+import Card from './Card.astro';
+import SocialCard from './SocialCard.astro';
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+
+
+
+<section class="body">
+    <div><h2>> {title}</h2></div>
+    <div class="cards">
+        <ul>
+            <SocialCard
+                logo='../../public/img/9e6c3ce5fcb9214b163d1cb2d1c9bf8f.png'
+                user='Linkedin'
+                href=''
+            />
+            <SocialCard
+                logo='../../public/img/github-mark-white.png'
+                user='hugost010'
+                href=''
+            />
+        </ul>        
+    </div>
+</section>
+
+<style>
+	img{
+		width:  8em;
+	}
+	.body{
+        width: 52rem;
+
+		margin: 0.2rem;
+		padding: 0.2rem;
+		font-size: 1.2rem;
+		font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	}
+	h2{
+		font-family: monospace;
+		padding: 0.2em;
+		margin-bottom: 0.1rem;
+	}
+	ul{
+		font-family: monospace;
+		padding: 0.3rem;
+		list-style-type: square;
+	}
+    ul {
+        justify-content: center;
+        display: grid;
+        grid-auto-flow: column;
+        gap: 2rem;
+		padding: 0;
+	}
+</style>

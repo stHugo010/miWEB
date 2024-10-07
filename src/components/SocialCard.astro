@@ -1,27 +1,44 @@
 ---
+import type { ImgAttributes } from 'astro:assets';
+
 interface Props {
-	title: string;
-	body: string;
+	logo: string;
+	user: string;
 	href: string;
 }
 
-const { href, title, body } = Astro.props;
+const { logo, href, user } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+<div class="body">
+    <li class="link-card">
+    	<a href={href}>
+    		<img src={logo} alt="Logo linkedin" class="logo">
+            <h2>
+    			{user}
+    			<!-- <span>&rarr;</span> -->
+    		</h2>
+    	</a>
+    </li>
+</div>
 <style>
+    .body{
+        width: 150px;
+        height: 150px;
+        /* padding: calc(1.5rem - 1px); */
+        /* display: flex; */
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
 	.link-card {
-		list-style: none;
+        width: 100%;
+        height: 100%;
+        text-align: bottom;
+        align-items: bottom;
+        /* list-style: none; */
 		display: flex;
 		padding: 1px;
 		background-color: #23262d;
@@ -34,9 +51,10 @@ const { href, title, body } = Astro.props;
 	}
 	.link-card > a {
 		width: 100%;
+        height: 100%;
 		text-decoration: none;
+        padding: 0;
 		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
 		border-radius: 8px;
 		color: white;
 		background-color: #23262d;
@@ -57,5 +75,9 @@ const { href, title, body } = Astro.props;
 	}
 	.link-card:is(:hover, :focus-within) h2 {
 		color: rgb(var(--accent-light));
+	}
+	.logo{
+        padding: 0;
+		width: 4em;
 	}
 </style>

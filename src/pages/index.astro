@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Boton from '../components/Boton.astro';
+import Intro from '../components/Intro.astro';
+import About from '../components/About.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout title="@hugost010">
+	<main>
+		<Intro
+			title='Hugo Sánchez Torres'
+		/>
+		<div class="cuerpo">
+			<hr>
+			<About
+				title='Sobre mí'
+			/>
+			<hr>
+			<Projects
+				title='Proyectos'
+			/>
+			<hr>
+			<Contact
+				title='Contacto y redes'
+			/>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		align-items: center;
+		margin: auto;
+		padding: 1rem;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.cuerpo{
+		width: 52rem;
+		margin: auto;
+	}
+
+	hr{
+		width: 100%;	
+	}
+</style>

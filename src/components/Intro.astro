@@ -1,0 +1,103 @@
+---
+import Index from '../pages/index.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+<section class="body">
+    <div>
+        <p>
+            <h1 class="full-name">> {title}<span class="blink">|</span></h1>
+            <h1 class="hst">> HST<span class="blink">|</span></h1>            
+        </p>
+    </div>
+</section>
+
+
+
+<style>
+    .body{
+        /* height: 100vh; */
+        text-align: center;
+        align-items: center;
+        justify-items: center;
+        display: flex;
+        /* height: 98lvh; */
+
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        
+    }
+
+	div{
+        padding: 0.01vh;
+        font-size: 2em;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+        display: inline;
+        white-space: nowrap;;
+    }
+    p{
+        padding: 0.2em;
+    }
+
+    @keyframes parpadeo {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+
+    .blink {
+        animation: parpadeo 1s infinite;
+    }
+    
+
+    /* Estilo para pantallas grandes, como escritorios */
+@media (min-width: 1024px) {
+  .container {
+    /* max-width: 1200px; */
+    /* margin: 0; */
+  }
+  .hst{
+    display: none;
+  }
+}
+
+/* Estilo para tabletas y dispositivos medianos */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .container {
+    padding: 0 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .hst{
+    display: none;
+    text-align: center;
+  }
+}
+
+/* Estilo para pantallas pequeñas, como teléfonos móviles */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 10px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .full-name{
+    display: none;
+  }
+  .hst{
+    display: block;
+    text-align: center;
+  }
+}
+</style>
